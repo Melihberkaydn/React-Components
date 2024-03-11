@@ -1,4 +1,4 @@
-import reactLogo from "../assets/react.svg";
+import reactLogo from "../../assets/react.svg";
 import "./Home.css";
 function HomePage() {
   return (
@@ -9,7 +9,7 @@ function HomePage() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Home Page</h1>
+      <h1>Components</h1>
     </>
   );
 }

@@ -4,16 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: "Raleway", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#f3f0f8, #d6d2db);
-  color: #e5d9f1;
-  min-height: 100vh;
-}
-
 section {
   margin: 1rem auto;
   max-width: 30rem;
