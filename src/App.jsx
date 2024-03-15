@@ -4,6 +4,7 @@ import "./App.css";
 import HomePage from "./pages/Home/Home.jsx";
 import ButtonsPage from "./pages/Buttons";
 import EditableField from "./pages/EditableFields/EditableFields";
+import Tictactoe from "./pages/TicTacToe/GameHome.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/editable-fields",
     element: <EditableField />,
+  },
+  {
+    path: "/tictactoe",
+    element: <Tictactoe />,
   },
 ]);
 
