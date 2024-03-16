@@ -1,5 +1,7 @@
 import "./Game.css";
 import Player from "./gamecomponents/Player";
+import playerSymbol from "./gamecomponents/GameBoard";
+import GameBoard from "./gamecomponents/GameBoard";
 
 function Tictactoe() {
   return (
@@ -9,6 +11,7 @@ function Tictactoe() {
           <Player initialName="Player 1" symbol="X" />
           <Player initialName="Player 2" symbol="O" />
         </ol>
+        <GameBoard />
       </div>
     </main>
   );
