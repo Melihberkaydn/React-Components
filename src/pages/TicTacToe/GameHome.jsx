@@ -1,14 +1,35 @@
 import "./Game.css";
 import Player from "./gamecomponents/Player";
-import playerSymbol from "./gamecomponents/GameBoard";
 import GameBoard from "./gamecomponents/GameBoard";
 import { useState } from "react";
+import Log from "./gamecomponents/Log";
+
+function deriveActivePlayer(turns) {
+  let currentPlayer = "X";
+
+  if (turns.length > 0 && turns[0].player === "X") {
+    currentPlayer = "O";
+  }
+
+  return currentPlayer;
+}
 
 function Tictactoe() {
-  const [activePlayer, setActivePlayer] = useState("X");
+  // const [activePlayer, setActivePlayer] = useState("X");
+  const [gameTurns, setGameTurns] = useState([]);
+  const activePlayer = deriveActivePlayer(gameTurns);
 
-  function handleActivePlayerChange() {
-    setActivePlayer((currentActive) => (currentActive === "X" ? "O" : "X"));
+  function handleActivePlayerChange(rowIndex, colIndex) {
+    // setActivePlayer((currentActive) => (currentActive === "X" ? "O" : "X"));
+    setGameTurns((prevTurns) => {
+      const currentPlayer = deriveActivePlayer(prevTurns);
+      const updatedTurns = [
+        { square: { row: rowIndex, col: colIndex }, player: currentPlayer },
+        ...prevTurns,
+      ];
+
+      return updatedTurns;
+    });
   }
 
   return (
@@ -28,9 +49,10 @@ function Tictactoe() {
         </ol>
         <GameBoard
           onSquareSelect={handleActivePlayerChange}
-          activePlayer={activePlayer}
+          turns={gameTurns}
         />
       </div>
+      <Log logs={gameTurns}></Log>
     </main>
   );
 }
