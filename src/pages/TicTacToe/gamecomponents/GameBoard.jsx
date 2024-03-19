@@ -1,32 +1,4 @@
-const initialGameBoard = [
-  [null, null, null],
-  [null, null, null],
-  [null, null, null],
-];
-
-export default function GameBoard({ onSquareSelect, turns }) {
-  let gameBoard = initialGameBoard;
-
-  for (const turn of turns) {
-    const { square, player } = turn;
-    const { row, col } = square;
-
-    gameBoard[row][col] = player;
-  }
-
-  //   const [gameBoard, setGameBoard] = useState(initialGameBoard);
-
-  //   function handleSelectSquare(rowIndex, colIndex) {
-  //     setGameBoard((prevGameBoard) => {
-  //       const updatedBoard = [
-  //         ...prevGameBoard.map((innerArray) => [...innerArray]),
-  //       ];
-  //       updatedBoard[rowIndex][colIndex] = activePlayer;
-  //       return updatedBoard;
-  //     });
-  //     onSquareSelect();
-  //   }
-
+export default function GameBoard({ onSquareSelect, gameBoard }) {
   return (
     <ol id="game-board">
       {gameBoard.map((row, rowIndex) => (
@@ -34,7 +6,10 @@ export default function GameBoard({ onSquareSelect, turns }) {
           <ol>
             {row.map((playerSymbol, colIndex) => (
               <li key={colIndex}>
-                <button onClick={() => onSquareSelect(rowIndex, colIndex)}>
+                <button
+                  onClick={() => onSquareSelect(rowIndex, colIndex)}
+                  disabled={playerSymbol !== null}
+                >
                   {playerSymbol}
                 </button>
               </li>
