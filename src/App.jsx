@@ -5,6 +5,7 @@ import HomePage from "./pages/Home/Home.jsx";
 import ButtonsPage from "./pages/Buttons";
 import EditableField from "./pages/EditableFields/EditableFields";
 import Tictactoe from "./pages/TicTacToe/GameHome.jsx";
+import Portal from "./pages/Portals/Portal.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/tictactoe",
     element: <Tictactoe />,
+  },
+  {
+    path: "/portal",
+    element: <Portal />,
   },
 ]);
 
