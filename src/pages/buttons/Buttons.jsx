@@ -1,6 +1,6 @@
-import Button from "../components/Button";
-import HomeIcon from "../assets/HomeIcon";
-import PlusIcon from "../assets/PlusIcon";
+import Button from "./components/Button";
+import HomeIcon from "../../assets/HomeIcon";
+import PlusIcon from "../../assets/PlusIcon";
 
 function ButtonsPage() {
   return (

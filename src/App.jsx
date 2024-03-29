@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./App.css";
 import HomePage from "./pages/Home/Home.jsx";
-import ButtonsPage from "./pages/Buttons";
+import ButtonsPage from "./pages/buttons/Buttons";
 import EditableField from "./pages/EditableFields/EditableFields";
 import Tictactoe from "./pages/TicTacToe/GameHome.jsx";
 import Portal from "./pages/Portals/Portal.jsx";
